@@ -1,0 +1,11 @@
+a.) context: Spieler inv: NurEinName : spieler.allInstances() -> collect (s: Spieler| name) -> select ( n: Name | n = self.name) -> size() = 1
+
+b.) context: Spiel inv: AnzahlSpielerProSpiel: 
+self.spieler -> select (s: Spieler | s.farbe = "weiss") -> size() = 1
+and 
+Spiel.allInstances() -> select(s: Spiel| s.beendet=false) -> select (s: Spiel| s.spieler.farbe = "weiss") -> size () = Spiel. allInstances() -> select (s: Spiel | s.beendet = false) -> size ()
+and
+Spiel.allInstances() -> select(s: Spiel| s.beendet=false) -> select (s: Spiel| s.spieler.farbe = "schwarz") -> size () = Spiel. allInstances() -> select (s: Spiel | s.beendet = false) -> size ()
+
+
+c.) context: Spieler inv: NichtSchwarzUndWeiss: self
